@@ -2,6 +2,17 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  fetch("http://localhost:9292/countries")
+  .then((r) => r.json())
+  .then((data) => console.log(data));
+
+  fetch("http://localhost:9292/continents")
+  .then((r) => r.json())
+  .then((data) => console.log(data));
+
+
+
   return (
     <div className="App">
       <header className="App-header">
