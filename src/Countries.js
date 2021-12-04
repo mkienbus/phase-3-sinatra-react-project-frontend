@@ -1,20 +1,17 @@
+import Country from "./Country"
+
 
 // container component to render Country
-function Countries (){
-
+function Countries ({countries}){
+    console.log(countries)
+    const allCountries = countries.map((c) => <Country country = {c}/>)
     return(
         <div>
-            {/* fetch request for all countries */}
-            <h3>Countries</h3>
+            <h3>Countries:</h3>
+                {allCountries}
         </div>
     )
-
 }
 
-export default Countries;
+export default Countries
 
-// useEffect(() =>{
-//     fetch("http://localhost:9292/countries")
-//     .then((r) => r.json())
-//     .then((data) => console.log(data));
-//   }, [])
