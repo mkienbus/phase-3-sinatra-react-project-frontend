@@ -24,7 +24,7 @@ function newCountry(countryName, continentId){
     body: JSON.stringify(country)
   })
     .then((r) => r.json())
-    .then((country) => console.log(country));
+    .then((r) => setCountries(countries.concat(r)));
 }
 
 //no need to pull continents from back end
