@@ -3,7 +3,8 @@ import React from "react"
 
 function ContinentIdTable(){
     return(
-        <table id = "table">
+    <table id = "table">
+      <tbody>
         <tr>
           <th>Continent</th>
           <th>Continent ID</th>
@@ -36,7 +37,8 @@ function ContinentIdTable(){
           <td>Antarctica</td>
           <td>7</td> 
         </tr>
-      </table>
+      </tbody>
+    </table>
     )
 }
 
