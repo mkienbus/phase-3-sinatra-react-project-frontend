@@ -1,13 +1,23 @@
 import React, { useState } from "react"
 
-function CountryForm({handleSubmit}){
+function CountryForm({newCountry}){
     const [countryName, setCountryName] = useState("")
     const [continentId, setContinentId] = useState("")
+
+function handleSubmit(e, countryName, continentId){
+    e.preventDefault();
+
+    newCountry(countryName, continentId);
+      
+    // post("http://localhost:9292/countries")
+    // .then((r) => r.json())
+    // .then((data) => setCountries(data));
+}
 
     return (
         <div>
             <h3>Add a new country to your list</h3>
-                <form onSubmit = {(e) => handleSubmit(e)}>
+                <form onSubmit = {(e) => handleSubmit(e, countryName, continentId)}>
                     <label>Country Name:</label>
                     <input type = "text" name = "countryName" value = {countryName} onChange = {e => setCountryName(e.target.value)}/>
                     <label>Continent ID:</label>
