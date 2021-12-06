@@ -7,6 +7,8 @@ function CountryForm({newCountry}){
 function handleSubmit(e, countryName, continentId){
     e.preventDefault();
     newCountry(countryName, continentId);
+    setCountryName("");
+    setContinentId("");
 }
 
     return (
