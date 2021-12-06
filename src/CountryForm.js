@@ -11,7 +11,7 @@ function handleSubmit(e, countryName, continentId){
 
     return (
         <div>
-            <h3>Add a new country to your list</h3>
+            <h2>Add a new country to your list</h2>
                 <form onSubmit = {(e) => handleSubmit(e, countryName, continentId)}>
                     <label>Country Name:</label>
                     <input type = "text" name = "countryName" value = {countryName} onChange = {e => setCountryName(e.target.value)}/>

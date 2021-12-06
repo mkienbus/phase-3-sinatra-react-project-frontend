@@ -7,7 +7,7 @@ function Countries ({countries}){
     const allCountries = countries.map((c) => <Country country = {c} key = {c.id}/>)
     return(
         <div>
-            <h3>Countries:</h3>
+            <h2>Countries visited:</h2>
                 {allCountries}
         </div>
     )
