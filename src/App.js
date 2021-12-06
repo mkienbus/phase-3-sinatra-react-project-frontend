@@ -35,15 +35,6 @@ function deleteCountry(id){
   .then((deletedCountry) => setCountries(countries.filter(country => country.id !== deletedCountry.id)) )
 }
 
-//no need to pull continents from back end
-//hard coded into ContinentIdTable component instead
-// useEffect(() => {
-//   fetch("http://localhost:9292/continents")
-//   .then((r) => r.json())
-//   .then((data) => console.log(data));
-// }, [])
-
-
   return (
     <div className="App">
       <h1>Welcome to Geotrack, the app which helps you keep track of the countries you've visited!</h1>
