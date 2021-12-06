@@ -15,14 +15,16 @@ useEffect(() =>{
 }, [])
 
 function newCountry(countryName, continentId){
-  //post request here
-
-  console.log(countryName)
-  return(
-    <div>
-
-    </div>
-  )
+  const country = {name: countryName, continent_id: continentId} 
+  fetch ("http://localhost:9292/countries", {
+    method: "POST",
+    headers: {
+      "Content-Type" : "application/json"
+    },
+    body: JSON.stringify(country)
+  })
+    .then((r) => r.json())
+    .then((country) => console.log(country));
 }
 
 //no need to pull continents from back end

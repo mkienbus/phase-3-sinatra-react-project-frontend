@@ -6,12 +6,7 @@ function CountryForm({newCountry}){
 
 function handleSubmit(e, countryName, continentId){
     e.preventDefault();
-
     newCountry(countryName, continentId);
-      
-    // post("http://localhost:9292/countries")
-    // .then((r) => r.json())
-    // .then((data) => setCountries(data));
 }
 
     return (
