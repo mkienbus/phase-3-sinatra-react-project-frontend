@@ -27,6 +27,14 @@ function newCountry(countryName, continentId){
     .then((r) => setCountries(countries.concat(r)));
 }
 
+function deleteCountry(id){
+ fetch(`http://localhost:9292/countries/${id}`, {
+   method: "DELETE"
+ })
+  .then((r) => r.json())
+  .then((deletedCountry) => setCountries(countries.filter(country => country.id !== deletedCountry.id)) )
+}
+
 //no need to pull continents from back end
 //hard coded into ContinentIdTable component instead
 // useEffect(() => {
@@ -39,7 +47,7 @@ function newCountry(countryName, continentId){
   return (
     <div className="App">
       <h1>Welcome to Geotrack, the app which helps you keep track of the countries you've visited!</h1>
-      <Countries countries = {countries}/>
+      <Countries countries = {countries} deleteCountry = {deleteCountry}/>
       <CountryForm newCountry = {newCountry}/>
       <ContinentIdTable />
     </div>

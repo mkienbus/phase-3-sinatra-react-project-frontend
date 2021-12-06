@@ -2,9 +2,9 @@ import Country from "./Country"
 
 
 // container component to render Country
-function Countries ({countries}){
+function Countries ({countries, deleteCountry}){
     console.log(countries)
-    const allCountries = countries.map((c) => <Country country = {c} key = {c.id}/>)
+    const allCountries = countries.map((c) => <Country country = {c} key = {c.id} deleteCountry = {deleteCountry}/>)
     return(
         <div>
             <h2>Countries visited:</h2>

@@ -1,9 +1,9 @@
 
-function Country({country}){
+function Country({country, deleteCountry}){
     console.log(country)
     return(
         <div>
-            <h4>{country.name}</h4>
+            <h4>{country.name} <button onClick = {() => deleteCountry(country.id)}>Remove Country</button></h4>
         </div>
     )
 }
